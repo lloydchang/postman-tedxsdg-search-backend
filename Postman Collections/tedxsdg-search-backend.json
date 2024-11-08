@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "aa8a4687-c657-4b97-a2bb-533a27f3393b",
+		"name": "https://tedxsdg-search-backend.vercel.app/",
+		"description": "api/search\n\n### 1\\. Inspiration Phase\n\n- **TEDx Talk Analysis**: Semantic analysis of TEDx talks to extract ideas and actionable insights.\n    \n- **SDG Alignment**: Automatic mapping of ideas to relevant UN Sustainable Development Goals.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search",
+			"id": "21a33d76-9c1c-4aa5-8e1d-2136d3e251d3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/search?query=sdg7",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "sdg7",
+							"description": "(Required) "
+						}
+					]
+				},
+				"description": "Handle search requests."
+			},
+			"response": [
+				{
+					"id": "ae577b96-2110-4d63-a446-8883058545ad",
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/search?query=sdg7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "sdg7"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "\"<object>\""
+				},
+				{
+					"id": "3e8eda51-01df-48e1-a131-301353973350",
+					"name": "Validation Error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/search?query=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"msg\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"loc\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"msg\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ]\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9a3b34f5-f8ac-4e83-a4b8-dfb3bed4e208",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6d6b16c0-7cb1-4bc0-9179-90315c8c70fb",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://tedxsdg-search-backend.vercel.app",
+			"type": "string"
+		}
+	]
+}
